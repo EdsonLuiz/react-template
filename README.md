@@ -133,3 +133,24 @@ module.exports = {
   // other configurations
 }
 ```
+
+## Devserver
+```shell
+$ npm i webpack-dev-server -D
+```
+
+Adicione no arquivo `webpack.config.js`
+```js
+module.exports = {
+  // other config settings
+  devServer: {
+    contentBase: path.resolve(__dirname, 'public')
+  },
+  // other config settings
+}
+```
+
+Inicie o servidor de desenvolvimento com:
+```shell
+npx webpack serve
+```
