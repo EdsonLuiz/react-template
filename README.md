@@ -164,3 +164,35 @@ module.exports = {
   // other config settings
 }
 ```
+
+## Ambientes
+Altere no arquivo `webpack.config.js`
+```js
+
+const isDevelopment = process.env.NODE_ENV !== 'production'
+
+module.exports = {
+  mode: isDevelopment ? 'development' : 'production',
+  devtool: isDevelopment ? 'eval-source-map' : 'source-map',
+  // other config settings
+}
+```
+
+É necessário instalar o cross-env para definir variáveis de ambiente, independente do sistema operacional
+```shell
+$ npm i cross-env -D
+```
+
+Criar scripts no `package.json`
+```json
+{
+  // other config settings
+  "scripts": {
+    "start": "npm run start:dev",
+    "start:dev": "webpack serve",
+    "start:build": "cross-env NODE_ENV=production webpack"
+  },
+  // other config settings
+}
+
+```
