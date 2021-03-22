@@ -200,7 +200,7 @@ Criar scripts no `package.json`
 ## Arquivos CSS
 É necessário criar uma nova regra no `webpack.config.js` para informar qual loader os arquivos `.css` devem utilizar.
 
-Intalar loaders
+Instalar loaders
 ```shell
 npm i style-loader css-loader -D
 ```
@@ -217,6 +217,30 @@ npm i style-loader css-loader -D
         test: /\.css$/,
         exclude: /node_modules/,
         use: ['style-loader', 'css-loader']
+      },
+    ]
+  }
+```
+
+## Arquivos SCSS
+
+Instalar loaders e dependências
+```shell
+npm i sass-loader node-sass -D
+```
+
+```js
+  module: {
+    rules: [
+      {
+        test: /\.jsx$/,
+        exclude: /node_modules/,
+        use: 'babel-loader'
+      },
+      {
+        test: /\.scss$/,
+        exclude: /node_modules/,
+        use: ['style-loader', 'css-loader', 'sass-loader']
       },
     ]
   }
