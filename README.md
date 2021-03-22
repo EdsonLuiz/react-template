@@ -154,3 +154,13 @@ Inicie o servidor de desenvolvimento com:
 ```shell
 npx webpack serve
 ```
+
+## Sourcemaps
+Adicione no arquivo `webpack.config.js`
+```js
+module.exports = {
+  // other config settings
+  devtool: 'eval-source-map'
+  // other config settings
+}
+```
